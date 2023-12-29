@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* tailwind.css or your custom styles */
+@keyframes moveCircle {
+  0% {
+    opacity: 0.5;
+    transform: translate(0, -2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 3px);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(0, 2px);
+  }
+}
+
+@keyframes searching {
+  0% {
+    opacity: 0.5;
+    transform: translate(0, -2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 3px);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(0, 2px);
+  }
+}
+@media (max-width: 640px) {
+  #desktopElements {
+    display: none;
+  }
+
+  #mobileDropdown {
+    display: flex;
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Rubik';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
