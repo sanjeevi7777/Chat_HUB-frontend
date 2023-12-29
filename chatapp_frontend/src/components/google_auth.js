@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleLogin } from 'react-google-login';
+import { GoogleLogin } from '@leecheuk/react-google-login';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../chatlogo.png';
 import axios from 'axios'; // Import Axios for making HTTP requests

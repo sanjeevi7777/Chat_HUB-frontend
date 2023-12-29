@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { LogoutIcon } from "@heroicons/react/outline";
 import { MoonIcon, SunIcon, XIcon } from "@heroicons/react/solid";
 import Picker from 'emoji-picker-react';
-import { GoogleLogout } from 'react-google-login';
+import { GoogleLogout } from '@leecheuk/react-google-login';
 import { useNavigate } from "react-router-dom";
 // import Logo from "../chatlogo.png"
 const Chat = ({ socket, username, room, photo }) => {
