@@ -45,12 +45,12 @@ const GetStarted = () => {
       <img className="fixed top-14 left-100 h-18 w-20" src={Logo} alt="Logo" />
 
       <div className="text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-6">
+        {/* <h1 className="text-3xl sm:text-4xl font-bold mb-6">
           Welcome to <span style={{ color: 'teal' }}>Chat HUB !</span>
         </h1>
         <p className="text-lg mb-8">
           Indulge in intriguing conversations and meet peculiar individuals exclusively through online chats.
-        </p>
+        </p> */}
         <GoogleLogin
           clientId="798504094336-id3r3n1ldom2rjmsa6tdp6db0oii5nct.apps.googleusercontent.com"
           buttonText="Login with Google"
