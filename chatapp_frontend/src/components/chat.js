@@ -4,7 +4,7 @@ import { MoonIcon, SunIcon, XIcon } from "@heroicons/react/solid";
 import Picker from 'emoji-picker-react';
 import { GoogleLogout } from '@leecheuk/react-google-login';
 import { useNavigate } from "react-router-dom";
-// import Logo from "../chatlogo.png"
+import Sent from "../sent.png"
 const Chat = ({ socket, username, room, photo }) => {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
@@ -15,7 +15,7 @@ const Chat = ({ socket, username, room, photo }) => {
   const [showModal, setShowModal] = useState(false);
   const Navigate = useNavigate();
   const messagesEndRef = useRef(null);
-  const inputRef = useRef(null); 
+  const inputRef = useRef(null);
   const [userList, setUserList] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isCross, setIsCross] = useState(false);
@@ -354,44 +354,44 @@ const Chat = ({ socket, username, room, photo }) => {
 
       <div className={`fixed bottom-0 left-0 right-0 ${darkMode ? 'border-gray-900 sm:bg-gray-800 bg-gray-900 text-white' : 'border-gray-300 sm:bg-gray-200 bg-white text-black'} p-2 sm:p-2 rounded-half`}>
         <div className="flex flex-row">
-        <button
-        className="rounded-full fixed bottom-5 left-5"
-        style={{height:'fit-content'}}
-        onClick={handleButtonClick}
-      >
-        {/* Emoji symbol */}
-        {!showPicker ? (
-        <span>
-        <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="ekdr8vow dhq51u3o" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><title>smiley</title><path fill="currentColor" d="M9.153,11.603c0.795,0,1.439-0.879,1.439-1.962S9.948,7.679,9.153,7.679 S7.714,8.558,7.714,9.641S8.358,11.603,9.153,11.603z M5.949,12.965c-0.026-0.307-0.131,5.218,6.063,5.551 c6.066-0.25,6.066-5.551,6.066-5.551C12,14.381,5.949,12.965,5.949,12.965z M17.312,14.073c0,0-0.669,1.959-5.051,1.959 c-3.505,0-5.388-1.164-5.607-1.959C6.654,14.073,12.566,15.128,17.312,14.073z M11.804,1.011c-6.195,0-10.826,5.022-10.826,11.217 s4.826,10.761,11.021,10.761S23.02,18.423,23.02,12.228C23.021,6.033,17.999,1.011,11.804,1.011z M12,21.354 c-5.273,0-9.381-3.886-9.381-9.159s3.942-9.548,9.215-9.548s9.548,4.275,9.548,9.548C21.381,17.467,17.273,21.354,12,21.354z  M15.108,11.603c0.795,0,1.439-0.879,1.439-1.962s-0.644-1.962-1.439-1.962s-1.439,0.879-1.439,1.962S14.313,11.603,15.108,11.603z"></path></svg>
-        </span>):(
-       <svg
-       xmlns="http://www.w3.org/2000/svg"
-       className="h-6 w-6"
-       fill={darkMode ? 'white' : 'black'}
-       viewBox="0 0 24 24"
-       stroke="currentColor"
-       style={{
-         width: '24px',
-         height: '24px',
-       }}
-     >
-       <path
-         strokeLinecap="round"
-         strokeLinejoin="round"
-         strokeWidth={2}
-         d="M6 18L18 6M6 6l12 12"
-       />
-     </svg>
-    )
-}
-      </button>
+          <button
+            className="rounded-full fixed bottom-4 left-5"
+            style={{ height: 'fit-content' }}
+            onClick={handleButtonClick}
+          >
+            {/* Emoji symbol */}
+            {!showPicker ? (
+              <span>
+                <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="ekdr8vow dhq51u3o" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><title>smiley</title><path fill="currentColor" d="M9.153,11.603c0.795,0,1.439-0.879,1.439-1.962S9.948,7.679,9.153,7.679 S7.714,8.558,7.714,9.641S8.358,11.603,9.153,11.603z M5.949,12.965c-0.026-0.307-0.131,5.218,6.063,5.551 c6.066-0.25,6.066-5.551,6.066-5.551C12,14.381,5.949,12.965,5.949,12.965z M17.312,14.073c0,0-0.669,1.959-5.051,1.959 c-3.505,0-5.388-1.164-5.607-1.959C6.654,14.073,12.566,15.128,17.312,14.073z M11.804,1.011c-6.195,0-10.826,5.022-10.826,11.217 s4.826,10.761,11.021,10.761S23.02,18.423,23.02,12.228C23.021,6.033,17.999,1.011,11.804,1.011z M12,21.354 c-5.273,0-9.381-3.886-9.381-9.159s3.942-9.548,9.215-9.548s9.548,4.275,9.548,9.548C21.381,17.467,17.273,21.354,12,21.354z  M15.108,11.603c0.795,0,1.439-0.879,1.439-1.962s-0.644-1.962-1.439-1.962s-1.439,0.879-1.439,1.962S14.313,11.603,15.108,11.603z"></path></svg>
+              </span>) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill={darkMode ? 'white' : 'black'}
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                style={{
+                  width: '24px',
+                  height: '24px',
+                }}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            )
+            }
+          </button>
           <div className={`fixed bottom-12 right-50 ${showModal ? 'translate-x-0' : '-translate-y-5'}`}>
-            {showPicker &&   <Picker key={forceUpdate} onEmojiClick={onEmojiClick} theme={darkMode ? 'dark' : 'light'} />}
+            {showPicker && <Picker key={forceUpdate} onEmojiClick={onEmojiClick} theme={darkMode ? 'dark' : 'light'} />}
           </div>
           <input
             type="text"
-            value={ currentMessage}
-            ref={inputRef} 
+            value={currentMessage}
+            ref={inputRef}
             onChange={(event) => {
               setCurrentMessage(event.target.value);
             }}
@@ -400,32 +400,19 @@ const Chat = ({ socket, username, room, photo }) => {
             }}
             placeholder="Type a message..."
             style={{
-              paddingLeft: '3rem', // Remove left padding
+              paddingLeft: '3rem', 
             }}
             className={`flex-1 p-2 rounded-full border ${darkMode ? 'border-gray-700 bg-gray-800 text-white' : 'border-gray-200 bg-gray-100 text-black'} focus:outline-none focus:ring focus:border-blue-500 mb-0 sm:mb-0 sm:mr-2`}
           />
 
           <button
             onClick={sendMessage}
-            className="ml-2 w-auto sm:px-0 py-0 sm:rounded-full"
+            className="ml-2 w-auto px-2 py-1 sm:rounded-full bg-teal-500 hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-75"
+            style={{ borderRadius: '9999px' }} 
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="48"
-              height="48"
-              // stroke="teal-300"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="lightgray"
-              className="feather feather-arrow-right-circle"
-            >
-              <circle cx="12" cy="12" r="10" fill="teal" />
-              <path d="M12 16l4-4-4-4M8 12h8" stroke="lightgray" />
-            </svg>
-
+            <img src={Sent} alt="sent" width="25" height="25" />
           </button>
+
 
         </div>
       </div>

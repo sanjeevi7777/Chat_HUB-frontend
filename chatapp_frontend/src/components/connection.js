@@ -5,6 +5,7 @@
   import { Link } from 'react-router-dom';
   import Logo from "../chatlogo.png"
   const socket = io.connect("https://chat-hub-server-a9x4.onrender.com");
+  // const socket = io.connect("http://localhost:3001/");
 
   function App() {
     const [showChat, setShowChat] = useState(false);
