@@ -2,7 +2,7 @@
   import React, { useState } from "react";
   import io from "socket.io-client";
   import Chat from "./chat";
-  import { Link } from 'react-router-dom';
+  // import { Link } from 'react-router-dom';
   import Logo from "../chatlogo.png"
   const socket = io.connect("https://chat-hub-server-a9x4.onrender.com");
   // const socket = io.connect("http://localhost:3001/");
@@ -11,12 +11,11 @@
     const [showChat, setShowChat] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [generatedCode, setGeneratedCode] = useState("");
-    const [isChecked, setIsChecked] = useState(false);
 
     const username = localStorage.getItem('name');
     const photo = localStorage.getItem('photo');
     const generateRoomCode = () => {
-      if (isChecked) {
+      // if (isChecked) {
         const alphanumeric = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         let code = '';
         for (let i = 0; i < 6; i++) {
@@ -24,13 +23,9 @@
         }
         setGeneratedCode(code);
         socket.emit("create_room", code); // Emit event to create a new room
-      } else {
-        alert('Please agree to the terms and conditions.');
-      }
-    };
-  
-    const handleCheckboxChange = (event) => {
-      setIsChecked(event.target.checked);
+      // } else {
+      //   alert('Please agree to the terms and conditions.');
+      // }
     };
   
     const joinRoom = () => {
@@ -87,21 +82,11 @@
                     }}
                   />
                 </div>
-                <p className="text-left text-xs sm:text-sm md:text-base lg:text-sm text-gray-400 mb-4 sm:mb-4 mt-10">
+                {/* <p className="text-left text-xs sm:text-sm md:text-base lg:text-sm text-gray-400 mb-4 sm:mb-4 mt-10">
                   By joining, you agree to our <Link to="/terms" className="underline">Terms and Conditions</Link>.
-                </p>
+                </p> */}
 
-                <div className="flex items-center mb-4 sm:mb-4">
-                  <input
-                    type="checkbox"
-                    checked={isChecked}
-                    onChange={handleCheckboxChange}
-                    className="mr-1 h-2 w-2 sm:h-3 sm:w-3 md:h-4 md:w-4 lg:h-4 lg:w-4"
-                  />
-                  <label htmlFor="agree" className="text-xs sm:text-xs md:text-sm lg:text-base text-gray-200">
-                    I agree to the terms and conditions
-                  </label>
-                </div>
+                
                 <button
                   onClick={joinRoom}
                   className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:bg-teal-600 relative"
